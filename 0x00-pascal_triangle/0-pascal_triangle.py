@@ -13,17 +13,26 @@ def pascal_triangle(n):
     if n <= 0:
         return values
     
+    # for i in range(n):
+    #     row = []
+    #     print(f"Row number {i}:")
+    #     for j in range(i + 1):
+    #         print(f"[{i} combination {j}] = ({math.comb(i, j)})", end=" | ")
+    #         row.append(math.comb(i, j))
+    #     print()
+    #     print("===========")
+    #     values.append(row)
+
     for i in range(n):
         row = []
-        # print(f"Row number {i}:")
+        max = 2**i
         for j in range(i + 1):
-            # print(f"[{i} combination {j}] = ({math.comb(i, j)})", end=" | ")
-            row.append(math.comb(i, j))
-        # print()
-        # print("===========")
+            if j > 0:
+                row.append(i + j)
         values.append(row)
+            
+
+
+
 
     return values
-    
-    
-
