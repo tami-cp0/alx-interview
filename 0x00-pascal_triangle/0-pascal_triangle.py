@@ -4,6 +4,7 @@ Pascals triangle
 """
 # import math
 
+
 def pascal_triangle(n):
     """
     function that generate the result for a pascal triangle
@@ -12,7 +13,7 @@ def pascal_triangle(n):
 
     if n <= 0:
         return result
-    
+
     # this solves it but uses the math library.
     # for i in range(n):
     #     row = []
@@ -26,7 +27,7 @@ def pascal_triangle(n):
             result.append([1])
             continue
         # create a row with 0 ... 0
-        temp = [0] + result[-1] + [0] 
+        temp = [0] + result[-1] + [0]
         row = []
         # loop though the length of the previous row plus 1
         for j in range(i + 1):
