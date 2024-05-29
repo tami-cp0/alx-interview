@@ -27,9 +27,9 @@ def pascal_triangle(n):
             result.append([1])
             continue
         # create a row with 0 ... 0
-        temp = [0] + result[-1] + [0]
+        temp = [0] + result[-1] + [0] # e.g 2nd row: [0, 1, 1, 0]
         row = []
-        # loop though the length of the previous row plus 1
+        # loop though the length (i) of the previous row plus 1
         for j in range(i + 1):
             # calculate the value based on the 2 numbers directly above the
             # row position
