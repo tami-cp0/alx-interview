@@ -8,7 +8,7 @@ def pascal_triangle(n):
     """
     function that generate the result for a pascal triangle
     """
-    result = [[1]]
+    result = []
 
     if n <= 0:
         return result
@@ -24,7 +24,11 @@ def pascal_triangle(n):
     #     print("===========")
     #     result.append(row)
 
-    for i in range(n - 1):
+    for i in range(n):
+        if i == 0:
+            # no calculations needed as first is 1
+            result.append([1])
+            continue
         # create a row with 0 ... 0
         temp = [0] + result[-1] + [0] 
         row = []
