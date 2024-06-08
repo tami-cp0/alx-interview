@@ -1,8 +1,9 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """
 Module to solve the lockboxes coding problem
 """
 from typing import List
+
 
 def canUnlockAll(boxes: List[List[int]]) -> bool:
     """
@@ -19,7 +20,8 @@ def canUnlockAll(boxes: List[List[int]]) -> bool:
     #         print(f'    checking box {box} to find key for box {key}.')
     #         if key in boxes[box] and box != key:
     #             flag = True
-    #             print(f"        found key of box {key} in box {box}: {boxes[box]}.")
+    #             print(f"        found key of box {key} in box {box}:
+    #                   f" {boxes[box]}.")
     #             break
     #     print('done checking')
     #     if not flag:
@@ -29,7 +31,7 @@ def canUnlockAll(boxes: List[List[int]]) -> bool:
 
     # print("=============================")
     # return True
-    
+
     # without print assistance
     for key in range(1, len(boxes)):
         flag = False
