@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """
 Module to calculates the minimum amount of operations
 needed to print 'H' n times.
