@@ -11,7 +11,6 @@ if __name__ == '__main__':
 
     stats = {}
 
-
     def calc_stats(match: Tuple) -> None:
         """
         Processes and stores the stats
@@ -22,7 +21,6 @@ if __name__ == '__main__':
 
         stats['size'] = stats.get('size', 0) + int(match[4])
         stats[match[3]] = stats.get(match[3], 0) + 1
-
 
     def display() -> None:
         """
@@ -37,7 +35,6 @@ if __name__ == '__main__':
             if stat == "size":
                 continue
             print(f"{stat}: {stats.get(stat)}")
-
 
     def handler(signum, frame):
         """
