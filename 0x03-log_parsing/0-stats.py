@@ -21,12 +21,12 @@ if __name__ == '__main__':
                 continue
             print(f"{stat}: {stats.get(stat)}")
 
-    def handler(signum, frame) -> None:
-        """Handler for Ctrl + C SIGINT"""
-        display()
+    # def handler(signum, frame) -> None:
+    #     """Handler for Ctrl + C SIGINT"""
+    #     display()
 
     # listens to Ctrl + C then displays the stats
-    signal.signal(signal.SIGINT, handler)
+    # signal.signal(signal.SIGINT, handler)
 
     # pattern to match for precessing
     half = r'(\d+\.\d+\.\d+\.\d+) - (\[\d+-\d+-\d+ \d+:\d+:\d+\.\d+\])'
@@ -35,11 +35,14 @@ if __name__ == '__main__':
 
     # listens to the output from another script
     count = 1
-    for line in sys.stdin:
-        match = re.search(input_format, line)
-        if match:
-            calc_stats(match.groups())
+    try:
+        for line in sys.stdin:
+            match = re.search(input_format, line)
+            if match:
+                calc_stats(match.groups())
 
-        if count % 10 == 0:
-            display()
-        count += 1
+            if count % 10 == 0:
+                display()
+            count += 1
+    except KeyboardInterrupt:
+        display()
