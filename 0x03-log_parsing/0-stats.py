@@ -44,7 +44,7 @@ if __name__ == '__main__':
         """
         display()
 
-    count = 0
+    count = 1
 
     # listens to Ctrl + C then displays the stats
     signal.signal(signal.SIGINT, handler)
@@ -60,10 +60,13 @@ if __name__ == '__main__':
     for line in sys.stdin:
         match = re.search(input_format, line)
         if match:
-            count += 1
             # processes and stores the stats
             calc_stats(match.groups())
+        else:
+            pass
 
         if count % 10 == 0:
             # displays the stats if 10 lines has been processed
             display()
+        count += 1
+
