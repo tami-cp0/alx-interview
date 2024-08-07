@@ -1,15 +1,13 @@
 #!/usr/bin/python3
-from typing import List
 
-
-def isWinner(x: int, nums: List[int]) -> str:
+def isWinner(x: int, nums: list[int]) -> str:
     """
     Determines the winner of the game based on the number
     of rounds and the given numbers.
 
     Parameters:
         x (int): The number of rounds.
-        nums (List[int]): List of integers for each round.
+        nums (list[int]): list of integers for each round.
 
     Returns:
         str: Name of the player who won the most rounds,
@@ -62,15 +60,15 @@ def check_prime(number: int) -> bool:
     return False
 
 
-def parse(number: int, num_list: List[int]) -> List[int]:
+def parse(number: int, num_list: list[int]) -> list[int]:
     """
     Finds all multiples of a number in a given list and removes them.
 
     Parameters:
         number (int): The number whose multiples are to be removed.
-        num_list (List[int]): The list of numbers to process.
+        num_list (list[int]): The list of numbers to process.
 
     Returns:
-        List[int]: The list after removing multiples of the number.
+        list[int]: The list after removing multiples of the number.
     """
     return [num for num in num_list if num % number != 0]
