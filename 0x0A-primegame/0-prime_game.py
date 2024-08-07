@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 
+
 def isWinner(x: int, nums: list[int]) -> str:
     """
     Determines the winner of the game based on the number
