@@ -20,6 +20,7 @@ def isWinner(x, nums):
         x < 1 or
         len(nums) != x or
         not nums or
+        not all(num > 0 for num in nums) or
         not all(isinstance(num, int) for num in nums)
     ):
         return None
