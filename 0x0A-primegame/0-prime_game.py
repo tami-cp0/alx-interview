@@ -42,18 +42,3 @@ def isWinner(x: int, nums: list[int]) -> str:
         return None
     else:
         return max(players, key=players.get)
-
-
-def check_prime(number: int) -> bool:
-    """
-    Checks if a number is a prime number.
-    Returns:
-        bool: True if the number is prime, False otherwise.
-    """
-    if number > 1:
-        for i in range(2, (number // 2) + 1):
-            if (number % i) == 0:
-                return False
-        return True  # number is a prime number
-
-    return False
