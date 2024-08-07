@@ -4,7 +4,7 @@ Define isWineer function, a solution to the Prime Game problem
 """
 
 
-def isWinner(x: int, nums: list[int]) -> str:
+def isWinner(x, nums):
     pass
 #     """
 #     Determines the winner of the game based on the number
