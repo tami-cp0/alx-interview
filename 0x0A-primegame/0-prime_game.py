@@ -15,6 +15,7 @@ def isWinner(x: int, nums: list[int]) -> str:
         or None if there's a tie.
     """
     players = {'Maria': 0, 'Ben': 0}  # Maria starts first, Ben second
+    cummulative = 0
 
     for n in nums:
         num_list = list(range(1, n + 1))
@@ -29,16 +30,20 @@ def isWinner(x: int, nums: list[int]) -> str:
                     break
 
             if not prime_found:
+                cummulative += 1
                 # No prime number left to choose, the current player loses
                 if toggle:
                     players['Ben'] += 1
                 else:
-                    players['Maria'] += 1
+                    players['Maria'] += 1                    
                 break
 
             toggle = not toggle  # Switch player turn
 
-    return max(players, key=players.get)
+    if cummulative % 2 == 0:
+        return None
+    else:
+        return max(players, key=players.get)
 
 
 def check_prime(number: int) -> bool:
