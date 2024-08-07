@@ -8,11 +8,6 @@ def isWinner(x: int, nums: list[int]) -> str:
     """
     Determines the winner of the game based on the number
     of rounds and the given numbers.
-
-    Parameters:
-        x (int): The number of rounds.
-        nums (list[int]): list of integers for each round.
-
     Returns:
         str: Name of the player who won the most rounds,
         or None if there's a tie.
@@ -28,7 +23,7 @@ def isWinner(x: int, nums: list[int]) -> str:
             prime_found = False
             for number in num_list:
                 if check_prime(number):
-                    num_list = parse(number, num_list)
+                    num_list = [num for num in num_list if num % number != 0]
                     prime_found = True
                     break
 
@@ -52,10 +47,6 @@ def isWinner(x: int, nums: list[int]) -> str:
 def check_prime(number: int) -> bool:
     """
     Checks if a number is a prime number.
-
-    Parameters:
-        number (int): The number to check.
-
     Returns:
         bool: True if the number is prime, False otherwise.
     """
@@ -63,21 +54,6 @@ def check_prime(number: int) -> bool:
         for i in range(2, (number // 2) + 1):
             if (number % i) == 0:
                 return False
-        # number is a prime number
-        return True
+        return True  # number is a prime number
 
     return False
-
-
-def parse(number: int, num_list: list[int]) -> list[int]:
-    """
-    Finds all multiples of a number in a given list and removes them.
-
-    Parameters:
-        number (int): The number whose multiples are to be removed.
-        num_list (list[int]): The list of numbers to process.
-
-    Returns:
-        list[int]: The list after removing multiples of the number.
-    """
-    return [num for num in num_list if num % number != 0]
