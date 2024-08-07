@@ -12,6 +12,18 @@ def isWinner(x, nums):
         str: Name of the player who won the most rounds,
         or None if there's a tie.
     """
+    # Validate inputs
+    if not isinstance(x, int) or not isinstance(nums, list):
+        return None
+
+    if (
+        x < 1 or
+        len(nums) != x or
+        not nums or
+        not all(isinstance(num, int) for num in nums)
+    ):
+        return None
+
     players = {'Maria': 0, 'Ben': 0}  # Maria starts first, Ben second
     cummulative = 0
 
@@ -39,7 +51,7 @@ def isWinner(x, nums):
 
             toggle = not toggle  # Switch player turn
 
-    if cummulative % 2 == 0:
+    if cummulative % 2 == 0 or cummulative == 0:
         return None
     else:
         return max(players, key=players.get)
