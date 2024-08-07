@@ -44,37 +44,3 @@ def isWinner(x: int, nums: list[int]) -> str:
         return None
     else:
         return max(players, key=players.get)
-
-
-def check_prime(number: int) -> bool:
-    """
-    Checks if a number is a prime number.
-
-    Parameters:
-        number (int): The number to check.
-
-    Returns:
-        bool: True if the number is prime, False otherwise.
-    """
-    if number > 1:
-        for i in range(2, (number // 2) + 1):
-            if (number % i) == 0:
-                return False
-        # number is a prime number
-        return True
-
-    return False
-
-
-def parse(number: int, num_list: list[int]) -> list[int]:
-    """
-    Finds all multiples of a number in a given list and removes them.
-
-    Parameters:
-        number (int): The number whose multiples are to be removed.
-        num_list (list[int]): The list of numbers to process.
-
-    Returns:
-        list[int]: The list after removing multiples of the number.
-    """
-    return [num for num in num_list if num % number != 0]
